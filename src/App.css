@@ -1,3 +1,5 @@
+@import url('http://fonts.cdnfonts.com/css/veritas-sans');
+
 .App {
   text-align: center;
 }
@@ -13,26 +15,34 @@
   }
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
+
+.header {
+  
+  background-color: #d8183a;
+  display: grid;
+  grid-auto-flow: column;
+  grid-template-columns: 3;
+  grid-template-rows: 1;
+  align-content: space-around;
   align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
+  justify-content: space-between;
+  max-height: 10vh;
   color: white;
+  text-decoration: none;
+}
+.list_item:link{
+  text-decoration: none;
+  color: #fff;
+
 }
 
-.App-link {
-  color: #61dafb;
+.title{
+  font-family: 'Veritas Sans', sans-serif;
+
+
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.drawer{
+  background-color: #d8183a;
+  height: 100vh;
 }
