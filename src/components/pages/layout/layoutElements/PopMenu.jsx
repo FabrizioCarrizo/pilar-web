@@ -3,6 +3,7 @@ import Button from "@mui/material/Button";
 import Menu from "@mui/material/Menu";
 import MenuItem from "@mui/material/MenuItem";
 import { AccountCircle } from "@mui/icons-material";
+import { Link } from "react-router-dom";
 
 export default function PopMenu() {
   const [anchorEl, setAnchorEl] = React.useState(null);
@@ -23,19 +24,22 @@ export default function PopMenu() {
         aria-expanded={open ? "true" : undefined}
         onClick={handleClick}
       >
-        <AccountCircle style={{color: '#fff'}}></AccountCircle>
+        <AccountCircle style={{ color: "#fff" }}></AccountCircle>
       </Button>
       <Menu
-       style={{backgroundColor: 'red'}}
-        id="menu"
+        style={{margin:'0'}}
         anchorEl={anchorEl}
         open={open}
         onClose={handleClose}
         MenuListProps={{
           "aria-labelledby": "button",
-        }}
+        }} disablePadding
       >
-        <MenuItem onClick={handleClose} style={{backgroundColor: 'red'}}>Home</MenuItem>
+        <Link to={'/'}>
+          <MenuItem onClick={handleClose} style={{backgroundColor:'#0f0', margin: '0'}} >
+            Home
+          </MenuItem>
+        </Link>
       </Menu>
     </div>
   );
