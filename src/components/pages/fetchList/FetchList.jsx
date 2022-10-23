@@ -1,13 +1,29 @@
-import React from "react";
-import Header from "../layout/layoutElements/Header";
+import * as React from 'react';
+import Card from '@mui/material/Card';
+import CardContent from '@mui/material/CardContent';
+import Typography from '@mui/material/Typography';
+import Header from '../layout/layoutElements/Header';
 
-const FetchList = () => {
+export default function ImgMediaCard() {
   return (
-    <div>
+    <div >
       <Header></Header>
-      FetchList
-    </div>
-  );
-};
+      <div className='card-container'>
+        <Card sx={{ maxWidth: 345 }}>
 
-export default FetchList;
+          <CardContent>
+            <Typography gutterBottom variant="h4" component="div">
+              Fetchlist
+            </Typography>
+            <Typography variant="body2" color="text.secondary">
+              Manage the data that is missig and needs to be acquired
+            </Typography>
+          </CardContent>
+
+        </Card>
+      </div>
+
+    </div>
+
+  );
+}
