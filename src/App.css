@@ -46,3 +46,13 @@
   background-color: #d8183a;
   height: 100vh;
 }
+
+.card-container{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 3em;
+  
+  
+
+}
