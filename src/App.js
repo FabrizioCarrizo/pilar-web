@@ -1,8 +1,10 @@
 import "./App.css";
+import React from "react";
+import "./App.css";
 import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
-import Dashboard from "./components/pages/dashboard/Dashboard";
-import FetchList from "./components/pages/fetchList/FetchList";
-import Todo from "./components/pages/todo/Todo";
+import Dashboard from "./pages/dashboard/Dashboard";
+import FetchList from "./pages/fetchList/FetchList";
+import Todo from "./pages/todo/Todo";
 
 function App() {
   return (
@@ -16,6 +18,7 @@ function App() {
 
         </Routes>
       </Router>
+     
     </div>
   );
 }

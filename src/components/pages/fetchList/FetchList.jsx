@@ -16,7 +16,7 @@ export default function ImgMediaCard() {
               Fetchlist
             </Typography>
             <Typography variant="body2" color="text.secondary">
-              Manage the data that is missig and needs to be acquired
+              Manage the data that is missing and needs to be acquired
             </Typography>
           </CardContent>
 
