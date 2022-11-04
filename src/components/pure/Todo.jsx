@@ -1,18 +1,18 @@
-import { React, useState } from "react";
+import { React } from "react";
 import PropTypes from "prop-types";
 import { List } from "@mui/material";
-import { Check, Delete } from "@mui/icons-material";
+import {Delete } from "@mui/icons-material";
 import FormControlLabel from "@mui/material/FormControlLabel";
 import Checkbox from "@mui/material/Checkbox";
-import DeleteIcon from '@mui/icons-material/Delete';
 
-const Todo = ({ onClick, completed, text, id, increasePending, increaseCompleted, deleteTodo }) => {
-  const [checked, setChecked] = useState(false);
 
-  const handleCheck=()=>{
-    setChecked(!checked);
-    if(checked){increasePending(1)} else{increaseCompleted(1)}
-  }
+const Todo = ({
+  onClick,
+  completed,
+  text,
+  id,
+  deleteTodo,
+}) => {
   return (
     <List
       key={id}
@@ -21,31 +21,29 @@ const Todo = ({ onClick, completed, text, id, increasePending, increaseCompleted
         flexDirection: "row",
         width: "100%",
 
-        backgroundColor: checked ? "green" : null,
-        textDecoration: checked ? "line-through" : "none",
+        backgroundColor: completed ? "#3dae2b" : null,
+        textDecoration: completed ? "line-through" : "none",
+        color: completed ? "white" : "inherit",
       }}
     >
       <FormControlLabel
-      style={{width:'100%'}}
+        style={{ width: "100%" }}
         control={
           <Checkbox
-            checked={checked}
-            onChange={() => {
-              onClick();
-              handleCheck();
-              
-            }}
+            onClick={onClick}
+            checked={completed}
             sx={{
-              color: "blue",
+              color: "black",
               "&.Mui-checked": {
-                color: "blue",
+                color: "#57fa3d",
               },
             }}
           />
         }
         label={text}
       />
-      <Delete onClick={()=>deleteTodo(id)}></Delete>
+      <Delete onClick={() => deleteTodo(id)} className={'trash'} ></Delete>
+      
     </List>
   );
 };

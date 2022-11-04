@@ -1,37 +1,34 @@
-import React, {useRef} from 'react';
-import TodosContainer from '../../components/containers/TodoContainer';
-import TodoFormContainer from '../../components/containers/TodoFormContainer';
-import Filteroptions from '../../components/pure/FilterOptions';
-import Card from '@mui/material/Card';
-import CardContent from '@mui/material/CardContent';
-import CardMedia from '@mui/material/CardMedia';
-import Button from '@mui/material/Button';
-import Typography from '@mui/material/Typography';
-import Header from '../layout/layoutElements/Header';
-import TodoCountContainer from '../../components/containers/TodoCountContainer';
+import React from "react";
+import TodosContainer from "../../components/containers/TodoContainer";
+import TodoFormContainer from "../../components/containers/TodoFormContainer";
+import Filteroptions from "../../components/pure/FilterOptions";
+import Card from "@mui/material/Card";
+import CardContent from "@mui/material/CardContent";
 
-export default function   ImgMediaCard() {
+import Typography from "@mui/material/Typography";
+import Header from "../layout/layoutElements/Header";
+
+export default function TodoPage() {
   return (
-    <div >
+    <div>
       <Header></Header>
-      <div className='card-container'>
-        <Card sx={{ maxWidth: 345 }}>
-
+      <div className="dashboard-card">
+        <Card>
           <CardContent>
             <Typography gutterBottom variant="h4" component="div">
-              Todo List
+              <h3>Manage your tasks</h3>
             </Typography>
-            <Typography variant="body2" color="text.secondary">
-              You can add or remove tasks, or mark them as completed
+            <Typography variant="body1" color="text.primary">
+              Create new tasks, delete them or toggle between completed and
+              pending
             </Typography>
           </CardContent>
-
         </Card>
       </div>
       <TodoFormContainer></TodoFormContainer>
-      <TodosContainer></TodosContainer>
+      <TodosContainer.TodosContainer></TodosContainer.TodosContainer>
+
       <Filteroptions></Filteroptions>
     </div>
-
   );
 }

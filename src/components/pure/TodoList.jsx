@@ -1,21 +1,20 @@
 import PropTypes from "prop-types";
 import Todo from "./Todo";
 import { Card } from "@mui/material";
-
 import CardContent from "@mui/material/CardContent";
 
-const TodoList = ({
-  todos,
-  onTodoClick,
-  deleteTodo,
-  increaseCompleted,
-  increasePending,
-}) => {
+const TodoList = ({ todos, completedCount, onTodoClick, deleteTodo }) => {
+  let completedTasks,
+    pendingTasks = [];
+
+  completedTasks = todos.filter((todo) => todo.completed);
+
+  pendingTasks = todos.filter((todo) => !todo.completed);
+
   return (
     <Card
       variant="outlined"
       style={{
-        backgroundColor: "red",
         width: "50%",
         margin: "auto",
         padding: "0 20%",
@@ -31,12 +30,9 @@ const TodoList = ({
         {todos.map((todo, id) => (
           <Todo
             key={id}
-            id={id}
             {...todo} // id, text, completed
             onClick={() => onTodoClick(todo.id)}
             deleteTodo={deleteTodo}
-            increaseCompleted={increaseCompleted}
-            increasePending={increasePending}
           />
         ))}
       </CardContent>

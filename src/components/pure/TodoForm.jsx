@@ -2,24 +2,22 @@ import React, {useRef} from 'react';
 import PropTypes from 'prop-types';
 
 
-const TodoForm = ({submit, onIncrease, number}) => {
+const TodoForm = ({submit, todos}) => {
 
     const newText = useRef();
-    console.log('this is form number: ',number)
     return (
         <div>
-            {number <1 ? <h2>Create your first task</h2>
-            : <h2>Create more tasks</h2>
-            }
+            
             
             <form onSubmit={(e) => {
                 e.preventDefault();
-                submit(newText.current.value);
+                newText.current.value.length>0 ?  submit(newText.current.value): alert('Tasks should not be empty')
+               
+                
                 newText.current.value = '';
-                onIncrease();
-                console.log(number)
+                
             }}>
-                <input type='text' ref={newText}/>
+                <input type='text' ref={newText} />
                 <button type='submit'>
                     Create Todo
                 </button>
