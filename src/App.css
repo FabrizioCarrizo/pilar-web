@@ -1,4 +1,4 @@
-@import url('http://fonts.cdnfonts.com/css/veritas-sans');
+@import url("http://fonts.cdnfonts.com/css/veritas-sans");
 
 .App {
   text-align: center;
@@ -15,9 +15,7 @@
   }
 }
 
-
 .header {
-  
   background-color: #d8183a;
   display: grid;
   grid-auto-flow: column;
@@ -30,29 +28,52 @@
   color: white;
   text-decoration: none;
 }
-.list_item:link{
+.list_item:link {
   text-decoration: none;
   color: #fff;
-
 }
 
-.title{
-  font-family: 'Veritas Sans', sans-serif;
-
-
+.title {
+  font-family: "Veritas Sans", sans-serif;
 }
 
-.drawer{
+.drawer {
   background-color: #d8183a;
   height: 100vh;
 }
 
-.card-container{
+.dashboard-card{
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: flex-start;
+  margin: 1em;
+
+}
+.card-container {
   display: flex;
   justify-content: center;
   align-items: center;
-  margin: 3em;
-  
-  
+  margin: 1.4em;
+  max-width: fit-content;
+  min-width: 10vw;
+}
 
+.todos-manager {
+  display: flex;
+  margin: 2em auto;
+  align-content: center;
+  align-items: center;
+  background-color: #d8183a;
+  max-width: fit-content;
+  /* height: 30vh; */
+}
+
+.trash{
+  color: #212121;
+
+}
+
+.trash:hover{
+  color: #d8183a;
 }
